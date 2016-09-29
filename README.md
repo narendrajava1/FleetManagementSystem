@@ -1,9 +1,9 @@
 # FleetManagementSystem
-
+This was a group project for my module in july 2016 for the subject software deveopment practice.
 
 #About project
 
-This was a group project for my module in july 2016 for the subject software deveopment practice.<bR>
+
 The Enterprise Fleet system manages the fleet of a certain company. It helps in making the tasks associated or linked with the vehicles associated to the company easier. Task includes-allocating vehicle based on employees goodwill, maintains cars, recording activity such as fuel consumed, time taken, distance travel v/s actual distance between place, etc. 
 
 #Technology
