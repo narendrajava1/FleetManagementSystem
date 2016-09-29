@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-21T05:16:49 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InventoryDetails" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60cbdb1b-17a3-413e-8925-36574acf42e0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FleetData"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="InventoryDS" uuid="11620f35-15a5-4a85-840d-685a2dc7eb2a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FleetData"/>
+		<queryString>
+			<![CDATA[select DISTINCT(V.carNumber) ,SUM(DISTINCT V.carCostPrice), SUM(DISTINCT M.costsForRepairOrServicing), B.carNumber ,M.currentKmReading,M.bookingId,M.milage,count(B.carNumber) from vehicle V left join  booking B on V.carNumber =B.carNumber left join maintenence M on B.bookingId = M.bookingId group by b.carNumber]]>
+		</queryString>
+		<field name="carNumber" class="java.lang.String"/>
+		<field name="SUM(DISTINCT V.carCostPrice)" class="java.math.BigDecimal"/>
+		<field name="SUM(DISTINCT M.costsForRepairOrServicing)" class="java.math.BigDecimal"/>
+		<field name="COLUMN_4" class="java.lang.String"/>
+		<field name="currentKmReading" class="java.lang.Integer"/>
+		<field name="bookingId" class="java.lang.Integer"/>
+		<field name="milage" class="java.lang.Integer"/>
+		<field name="count(B.carNumber)" class="java.lang.Long"/>
+		<group name="carNumber">
+			<groupExpression><![CDATA[$F{carNumber}]]></groupExpression>
+		</group>
+		<group name="SUM(DISTINCT V.carCostPrice)">
+			<groupExpression><![CDATA[$F{SUM(DISTINCT V.carCostPrice)}]]></groupExpression>
+		</group>
+		<group name="SUM(DISTINCT M.costsForRepairOrServicing)">
+			<groupExpression><![CDATA[$F{SUM(DISTINCT M.costsForRepairOrServicing)}]]></groupExpression>
+		</group>
+		<group name="COLUMN_4">
+			<groupExpression><![CDATA[$F{COLUMN_4}]]></groupExpression>
+		</group>
+		<group name="currentKmReading">
+			<groupExpression><![CDATA[$F{currentKmReading}]]></groupExpression>
+		</group>
+		<group name="bookingId">
+			<groupExpression><![CDATA[$F{bookingId}]]></groupExpression>
+		</group>
+		<group name="milage">
+			<groupExpression><![CDATA[$F{milage}]]></groupExpression>
+		</group>
+		<group name="count(B.carNumber)">
+			<groupExpression><![CDATA[$F{count(B.carNumber)}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[select DISTINCT(V.carNumber) ,SUM(DISTINCT V.carCostPrice), SUM(DISTINCT M.costsForRepairOrServicing), B.carNumber ,M.currentKmReading,M.bookingId,M.milage,count(B.carNumber) from vehicle V left join  booking B on V.carNumber =B.carNumber left join maintenence M on B.bookingId = M.bookingId group by b.carNumber]]>
+	</queryString>
+	<field name="carNumber" class="java.lang.String"/>
+	<field name="SUM(DISTINCT V.carCostPrice)" class="java.math.BigDecimal"/>
+	<field name="SUM(DISTINCT M.costsForRepairOrServicing)" class="java.math.BigDecimal"/>
+	<field name="COLUMN_4" class="java.lang.String"/>
+	<field name="currentKmReading" class="java.lang.Integer"/>
+	<field name="bookingId" class="java.lang.Integer"/>
+	<field name="milage" class="java.lang.Integer"/>
+	<field name="count(B.carNumber)" class="java.lang.Long"/>
+	<group name="carNumber">
+		<groupExpression><![CDATA[$F{carNumber}]]></groupExpression>
+	</group>
+	<group name="SUM(DISTINCT V.carCostPrice)">
+		<groupExpression><![CDATA[$F{SUM(DISTINCT V.carCostPrice)}]]></groupExpression>
+	</group>
+	<group name="SUM(DISTINCT M.costsForRepairOrServicing)">
+		<groupExpression><![CDATA[$F{SUM(DISTINCT M.costsForRepairOrServicing)}]]></groupExpression>
+	</group>
+	<group name="COLUMN_4">
+		<groupExpression><![CDATA[$F{COLUMN_4}]]></groupExpression>
+	</group>
+	<group name="currentKmReading">
+		<groupExpression><![CDATA[$F{currentKmReading}]]></groupExpression>
+	</group>
+	<group name="bookingId">
+		<groupExpression><![CDATA[$F{bookingId}]]></groupExpression>
+	</group>
+	<group name="milage">
+		<groupExpression><![CDATA[$F{milage}]]></groupExpression>
+	</group>
+	<group name="count(B.carNumber)">
+		<groupExpression><![CDATA[$F{count(B.carNumber)}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="70" width="341" height="41" uuid="0967c4d2-4a97-4035-bebd-be86fe09faa6"/>
+				<textElement textAlignment="Center">
+					<font size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inventory]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="250" splitType="Stretch">
+			<componentElement>
+				<reportElement x="190" y="0" width="200" height="200" uuid="cce04de0-c127-4dad-892a-05fa6e169794">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="InventoryDS" uuid="c448b78a-402e-404f-97e1-406b38fad108">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="33" uuid="50cce501-179c-4a25-bd5b-349dbd11820b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="33" height="30" uuid="248fbc55-0542-4d38-9258-2a3e9b988e64"/>
+								<text><![CDATA[carNumber]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="30" uuid="cc8daf67-9b9d-4fe3-8e24-78a93d17ac8e"/>
+								<textFieldExpression><![CDATA[$F{carNumber}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="33" uuid="3116add4-f003-4d65-a61c-e6fab01b96ad">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="33" height="30" uuid="043a53aa-dab3-4813-89c5-d8094aec88d5"/>
+								<text><![CDATA[COLUMN_4]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="30" uuid="6e41e465-c815-4cba-be24-9894c2543681"/>
+								<textFieldExpression><![CDATA[$F{COLUMN_4}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="33" uuid="34795b79-4456-456a-96cd-475527bd0e31">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="33" height="30" uuid="634ca2a5-c18a-4eed-be86-c94b66477882"/>
+								<text><![CDATA[currentKmReading]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="30" uuid="40b8efd6-1636-436b-a2cc-60efed0f3b0d"/>
+								<textFieldExpression><![CDATA[$F{currentKmReading}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="33" uuid="a11368de-9673-47c2-b6fc-d53bf5347ef1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="33" height="30" uuid="4051f424-c030-4b8a-9472-61909afb1ec4"/>
+								<text><![CDATA[bookingId]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="30" uuid="84e25f1d-f96a-40cf-bfda-32b00af98d69"/>
+								<textFieldExpression><![CDATA[$F{bookingId}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="33" uuid="50775694-d3d9-4ca6-aa10-75bbda732d81">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="33" height="30" uuid="5475aad8-6dd6-41ea-b6b9-e3d81ccaa499"/>
+								<text><![CDATA[milage]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="30" uuid="ff491045-7d83-485e-aa20-65bc6b5aa9df"/>
+								<textFieldExpression><![CDATA[$F{milage}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="33" uuid="38330af8-39ad-4c95-b2f4-ff0026e2b812">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="33" height="30" uuid="e2ef97de-cc44-4449-9866-6338733d04b3"/>
+								<text><![CDATA[count(B.carNumber)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="30" uuid="162177a1-bff8-4bf2-938e-d1271a0d8946"/>
+								<textFieldExpression><![CDATA[$F{count(B.carNumber)}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
