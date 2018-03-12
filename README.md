@@ -21,6 +21,4 @@ IDE-eclips<br>
 2.integrating the google api for distance calculation and place name.
 3.integrating log4j
 
-#Result
 
-Scored 1.8.
